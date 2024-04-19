@@ -9,7 +9,7 @@
     <?php
       // Retrieve and display car information
       echo "<h2> Car Information </h2>";
-      echo "<p> Make: " . $_POST["make"] . "</p>";
+      echo "Make: " . $_POST["make"] . "<br/>";
       echo "<p> Model: " . $_POST["model"] . "</p>";
       echo "<p> Year: " . $_POST["year"] . "</p>";
       echo "<p> Mileage: " . $_POST["mileage"] . "</p>";
