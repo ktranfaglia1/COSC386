@@ -1,0 +1,49 @@
+<html>
+  <body>
+    <!--This is a comment. Comments are not displayed in the browser-->
+    <!-The font size is header 4 -->
+    <h2>ABC Art Supply Order Form</h2>
+
+    <!--Starting form. You need to specify the action and method -->
+    <form action="process.php" method="post">
+      <img src="art2.jpeg" width="300" height="200" />
+      <p>
+        Item:
+        <!--This is the tag for the drop down list box.-->
+        <select name="item" id="item">
+          <option value="Paint">Paint</option>
+          <option value="Brushes">Brushes</option>
+          <option value="Eraser">Erasers</option>
+        </select>
+      </p>
+      <p>
+        Quantity:
+        <input name="quantity" type="text" id="quantity" />
+      </p>
+
+      <p>Customer Information</p>
+
+      <!--This is the tag for a table-->
+      <table width="30%" border="1">
+        <tr>
+          <td width="36%">First Name</td>
+          <td width="64%"><input name="first" type="text" id="first" /></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td><input name="last" type="text" id="last" /></td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td><input name="phone" type="text" id="phone" /></td>
+        </tr>
+      </table>
+      <p>
+        <input type="submit" />
+      </p>
+      <p>
+        <a href="index.html">Go Back to Homepage </a>
+      </p>
+    </form>
+  </body>
+</html>

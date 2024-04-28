@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <!--This is a comment. Comments are not displayed in the browser-->
+    <!-The font size is header 4 -->
+    <h2>ABC Art Supply Search and Delete Order</h2>
+
+    <img src="art3.jpeg" height="300" width="200" />
+
+    <h2>Menu</h2>
+    <table>
+      <tr>
+        <td><a href="displaydata.php">Display All Order</a></td>
+      </tr>
+      <tr></tr>
+      <tr>
+        <td><b>Search Order: </b></td>
+      </tr>
+      <form action="searchperson.php" method="post">
+        <tr>
+          <td>
+            Lastname: <input type="text" name="last" />
+            <input name="search" type="submit" />
+          </td>
+        </tr>
+      </form>
+      <tr></tr>
+      <tr>
+        <td><b> Delete Order</b></td>
+      </tr>
+      <form action="deleteorder.php" method="post">
+        <tr>
+          <td>
+            Lastname: <input type="text" name="last" />
+            <input name="delete" type="submit" />
+          </td>
+        </tr>
+      </form>
+    </table>
+    <p><a href="index.html">Go back to Homepage</a></p>
+  </body>
+</html>
