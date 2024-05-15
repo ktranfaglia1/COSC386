@@ -35,6 +35,15 @@ h2 {
   text-align: center;
   color: black;
 }
+h3 {
+  margin: 0;
+  font-family: Times;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+  color: black;
+}
 .subtitle {
   margin: 0;
   font-family: Times;
@@ -131,7 +140,8 @@ label {
 .nav_button {
   margin: 30px 60px;
   width: 400px;
-  height: 200px;
+  height: 125px;
+  padding-top: 75px;
   font-size: 28px;
   border: 2px solid black;
   cursor: pointer;
@@ -158,6 +168,7 @@ label {
 .input_label {
   font-size: 22px;
   margin: 12px 0;
+  text-align: center;
 }
 .input {
   border: 2px solid black;
@@ -179,12 +190,18 @@ label {
 .display_button {
   margin: 20px;
   width: 150px;
-  height: 100px;
-  font-size: 24px;
+  height: 75px;
+  padding: 12px 6px 6px 6px;
+  font-size: 26px;
   border: 2px solid black;
   cursor: pointer;
   background-color: rgb(119, 169, 226);
 }
 .display_button:hover {
   background-color: rgb(107, 152, 203);
+}
+a {
+  text-decoration: none;
+  text-align: center;
+  color: black;
 }

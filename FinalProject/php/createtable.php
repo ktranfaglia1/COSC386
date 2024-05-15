@@ -4,14 +4,14 @@ include("connection.php");
 // Create OWNER table
 $ownerTable = "CREATE TABLE OWNER (
     OWNER_ID int(6) NOT NULL AUTO_INCREMENT,
-    OWNER_FNAME varchar(50),
-    OWNER_LNAME varchar(50),
-    OWNER_EMAIL varchar(100),
-    OWNER_PHONE varchar(20),
-    OWNER_STREET varchar(100),
-    OWNER_CITY varchar(50),
+    OWNER_FNAME varchar(30),
+    OWNER_LNAME varchar(30),
+    OWNER_EMAIL varchar(30),
+    OWNER_PHONE varchar(10),
+    OWNER_STREET varchar(30),
+    OWNER_CITY varchar(30),
     OWNER_STATE varchar(2),
-    OWNER_POSTAL varchar(10),
+    OWNER_POSTAL varchar(5),
     PRIMARY KEY(OWNER_ID)
 )";
 $resultOwnerTable = mysqli_query($con, $ownerTable);
@@ -19,10 +19,10 @@ $resultOwnerTable = mysqli_query($con, $ownerTable);
 // Create VEHICLE table
 $vehicleTable = "CREATE TABLE VEHICLE (
     VEH_ID int(6) NOT NULL AUTO_INCREMENT,
-    VEH_MAKE varchar(50),
-    VEH_MODEL varchar(50),
+    VEH_MAKE varchar(30),
+    VEH_MODEL varchar(30),
     VEH_YEAR int(4),
-    VEH_MILEAGE int(11),
+    VEH_MILEAGE int(7),
     OWNER_ID int(6),
     PRIMARY KEY(VEH_ID),
     FOREIGN KEY (OWNER_ID) REFERENCES OWNER(OWNER_ID)
@@ -31,7 +31,7 @@ $resultVehicleTable = mysqli_query($con, $vehicleTable);
 
 // Create REGISTRATION table
 $registrationTable = "CREATE TABLE REGISTRATION (
-    REG_NUM int(6) NOT NULL,
+    REG_NUM int(10) NOT NULL,
     REG_SALEDATE DATE,
     REG_SALEPRICE DECIMAL(10,2),
     OWNER_ID int(6),
