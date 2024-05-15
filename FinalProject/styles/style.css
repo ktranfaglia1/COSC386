@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  /* background-color: rgb(216, 216, 216); */
+  background-color: white;
+}
+hr {
+  margin: 10px 0;
+  background-color: black;
+  height: 1px;
+}
+.p1 {
+  margin: 0;
+  display: block;
+  font-family: Times;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 22px;
+  color: black;
+}
+h1 {
+  margin: 0;
+  font-family: Times;
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+h2 {
+  margin: 0;
+  background-color: lightskyblue;
+  padding: 10px;
+  font-family: Times;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+.subtitle {
+  margin: 0;
+  font-family: Times;
+  font-size: 28px;
+  line-height: 1.2;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  overflow: hidden;
+  height: 60px;
+  margin: 0;
+}
+.navbar a {
+  font-size: 18px;  
+  font-family: Arial;
+  text-align: center;
+  float: left;
+  display: block;
+  color: whitesmoke;
+  padding: 24px;
+  text-decoration: none;
+}
+.navbar a:hover {
+  background-color: lightgray;
+  color: black;
+}
+.image_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.centered_container {
+  display: flex;
+  justify-content: center;
+}
+.contact_container {
+  display: flex;
+  width: 800px;
+  height: 100%;
+}
+.contact_form {
+  flex: 1;
+  padding: 20px;
+  margin: 30px 10px;
+}
+.contact_form {
+  background-color: rgb(208, 208, 208);
+  border-radius: 12px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+}
+label {
+  display: block;
+  margin-left: 5px;
+  font-family: times;
+  font-size: 17px;
+}
+.header {
+  text-align: center;
+  font-size: 32px;
+  font-family: Times;
+}
+.contact_form input[type="text"], select {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+.contact_form input[type="submit"] {
+  background-color: #007bff; 
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 16px;  
+  font-size: 15px;
+  margin: 10px 30px;
+  cursor: pointer;
+}
+.contact_form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.button_container {
+  display: flex;
+  justify-content: center;
+}
+.nav_button {
+  margin: 30px 60px;
+  width: 400px;
+  height: 200px;
+  font-size: 28px;
+  border: 2px solid black;
+  background-color: rgb(119, 169, 226);
+}
