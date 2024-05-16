@@ -2,43 +2,43 @@
 include("connection.php");
 
 // Create OWNER table
-$ownerTable = "CREATE TABLE OWNER (
-    OWNER_ID int(6) NOT NULL AUTO_INCREMENT,
-    OWNER_FNAME varchar(30),
-    OWNER_LNAME varchar(30),
-    OWNER_EMAIL varchar(30),
-    OWNER_PHONE varchar(10),
-    OWNER_STREET varchar(30),
-    OWNER_CITY varchar(30),
-    OWNER_STATE varchar(2),
-    OWNER_POSTAL varchar(5),
-    PRIMARY KEY(OWNER_ID)
+$ownerTable = "CREATE TABLE Owner (
+    OwnerID int(6) NOT NULL AUTO_INCREMENT,
+    FirstName varchar(30),
+    LastName varchar(30),
+    Email varchar(30),
+    Phone varchar(10),
+    Street varchar(30),
+    City varchar(30),
+    State varchar(2),
+    Postal varchar(5),
+    PRIMARY KEY(OwnerID)
 )";
 $resultOwnerTable = mysqli_query($con, $ownerTable);
 
 // Create VEHICLE table
-$vehicleTable = "CREATE TABLE VEHICLE (
-    VEH_ID int(6) NOT NULL AUTO_INCREMENT,
-    VEH_MAKE varchar(30),
-    VEH_MODEL varchar(30),
-    VEH_YEAR int(4),
-    VEH_MILEAGE int(7),
-    OWNER_ID int(6),
-    PRIMARY KEY(VEH_ID),
-    FOREIGN KEY (OWNER_ID) REFERENCES OWNER(OWNER_ID)
+$vehicleTable = "CREATE TABLE Vehicle (
+    VehicleID int(6) NOT NULL AUTO_INCREMENT,
+    Make varchar(30),
+    Model varchar(30),
+    Year int(4),
+    Mileage int(7),
+    OwnerID int(6),
+    PRIMARY KEY(VehicleID),
+    FOREIGN KEY (OwnerID) REFERENCES Owner(OwnerID)
 )";
 $resultVehicleTable = mysqli_query($con, $vehicleTable);
 
 // Create REGISTRATION table
-$registrationTable = "CREATE TABLE REGISTRATION (
-    REG_NUM int(10) NOT NULL,
-    REG_SALEDATE DATE,
-    REG_SALEPRICE DECIMAL(10,2),
-    OWNER_ID int(6),
-    VEH_ID int(6),
-    PRIMARY KEY(REG_NUM),
-    FOREIGN KEY (OWNER_ID) REFERENCES OWNER(OWNER_ID),
-    FOREIGN KEY (VEH_ID) REFERENCES VEHICLE(VEH_ID)
+$registrationTable = "CREATE TABLE Registration (
+    Regnumber int(10) NOT NULL,
+    SaleDate DATE,
+    SalePrice DECIMAL(10,2),
+    OwnerID int(6),
+    VehicleID int(6),
+    PRIMARY KEY(Regnumber),
+    FOREIGN KEY (OwnerID) REFERENCES Owner(OwnerID),
+    FOREIGN KEY (VehicleID) REFERENCES Vehicle(VehicleID)
 )";
 $resultRegistrationTable = mysqli_query($con, $registrationTable);
 

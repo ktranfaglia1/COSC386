@@ -16,13 +16,23 @@ if (isset($_POST['vehicleID']) && !empty($_POST['vehicleID'])) {
     $price = mysqli_real_escape_string($con, $_POST['price']);
 
     // Query to update the vehicle
-    $query = "UPDATE vehicles SET make='$make', model='$model', year='$year', mileage='$mileage', regnumber='$regnumber', price='$price' WHERE id=$vehicleID";
+    $query = "UPDATE Vehicle SET Make='$make', Model='$model', Year='$year', Mileage='$mileage' WHERE VehicleID=$vehicleID";
 
     // Execute the query
     if (mysqli_query($con, $query)) {
         echo "Vehicle updated successfully";
     } else {
         echo "Error updating vehicle: " . mysqli_error($con);
+    }
+
+    // Query to update the registration
+    $query = "UPDATE Registration SET Regnumber='$regnumber', SaleDate=NOW(), SalePrice='$price' WHERE VehicleID=$vehicleID";
+
+    // Execute the query
+    if (mysqli_query($con, $query)) {
+        echo "</br>Registration updated successfully";
+    } else {
+        echo "Error updating registration: " . mysqli_error($con);
     }
 } else {
     echo "Vehicle ID is required";

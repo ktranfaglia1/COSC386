@@ -7,8 +7,8 @@ if(isset($_POST['lastName']) && !empty($_POST['lastName'])) {
     // Sanitize input to prevent SQL injection
     $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
 
-    // Query to search for owners by last name
-    $query = "SELECT * FROM owners WHERE lname LIKE '%$lastName%'";
+    // Query to search for owners by last name (similar)
+    $query = "SELECT * FROM Owner WHERE LastName LIKE '%$lastName%'";
 
     // Execute the query
     $result = mysqli_query($con, $query);
@@ -19,7 +19,7 @@ if(isset($_POST['lastName']) && !empty($_POST['lastName'])) {
     // Check if there are any records
     if (mysqli_num_rows($result) > 0) {
         // Display table header
-        echo "<table>";
+        echo "<center><table border='1'>";
         echo "<tr>";
         echo "<th>Last Name</th>";
         echo "<th>First Name</th>";
@@ -34,18 +34,18 @@ if(isset($_POST['lastName']) && !empty($_POST['lastName'])) {
         // Fetch and display each record
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>" . $row['lname'] . "</td>";
-            echo "<td>" . $row['fname'] . "</td>";
-            echo "<td>" . $row['email'] . "</td>";
-            echo "<td>" . $row['phone'] . "</td>";
-            echo "<td>" . $row['street'] . "</td>";
-            echo "<td>" . $row['city'] . "</td>";
-            echo "<td>" . $row['state'] . "</td>";
-            echo "<td>" . $row['postal'] . "</td>";
+            echo "<td>" . $row['LastName'] . "</td>";
+            echo "<td>" . $row['FirstName'] . "</td>";
+            echo "<td>" . $row['Email'] . "</td>";
+            echo "<td>" . $row['Phone'] . "</td>";
+            echo "<td>" . $row['Street'] . "</td>";
+            echo "<td>" . $row['City'] . "</td>";
+            echo "<td>" . $row['State'] . "</td>";
+            echo "<td>" . $row['Postal'] . "</td>";
             echo "</tr>";
         }
 
-        echo "</table>";
+        echo "</table></center>";
     } else {
         echo "No sellers found for the specified last name.";
     }

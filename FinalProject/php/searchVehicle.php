@@ -8,7 +8,9 @@ if(isset($_POST['make']) && !empty($_POST['make'])) {
     $make = mysqli_real_escape_string($con, $_POST['make']);
 
     // Query to search for vehicles by make
-    $query = "SELECT * FROM vehicles WHERE make LIKE '%$make%'";
+    $query = "SELECT Vehicle.*, Registration.* FROM Vehicle 
+          INNER JOIN Registration ON Vehicle.VehicleID = Registration.VehicleID 
+          WHERE Vehicle.Make LIKE '%$make%'";
 
     // Execute the query
     $result = mysqli_query($con, $query);
@@ -19,26 +21,28 @@ if(isset($_POST['make']) && !empty($_POST['make'])) {
     // Check if there are any records
     if (mysqli_num_rows($result) > 0) {
         // Display table header
-        echo "<table>";
+        echo "<center><table border='1'>";
         echo "<tr>";
         echo "<th>Make</th>";
         echo "<th>Model</th>";
         echo "<th>Year</th>";
         echo "<th>Mileage</th>";
         echo "<th>Registration ID</th>";
+        echo "<th>Sales Date</th>";
         echo "<th>Sales Price</th>";
         echo "</tr>";
 
         // Fetch and display each record
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>" . $row['make'] . "</td>";
-            echo "<td>" . $row['model'] . "</td>";
-            echo "<td>" . $row['year'] . "</td>";
-            echo "<td>" . $row['mileage'] . "</td>";
-            echo "<td>" . $row['regnumber'] . "</td>";
-            echo "<td>" . $row['price'] . "</td>";
-            echo "</tr>";
+            echo "<td>" . $row['Make'] . "</td>";
+            echo "<td>" . $row['Model'] . "</td>";
+            echo "<td>" . $row['Year'] . "</td>";
+            echo "<td>" . $row['Mileage'] . "</td>";
+            echo "<td>" . $row['Regnumber'] . "</td>";
+            echo "<td>" . $row['SaleDate'] . "</td>";
+            echo "<td>" . $row['SalePrice'] . "</td>";
+            echo "</tr></center>";
         }
 
         echo "</table>";

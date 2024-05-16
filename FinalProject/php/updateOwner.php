@@ -18,7 +18,7 @@ if (isset($_POST['ownerID']) && !empty($_POST['ownerID'])) {
     $postal = mysqli_real_escape_string($con, $_POST['postal']);
 
     // Query to update the owner
-    $query = "UPDATE owners SET fname='$fname', lname='$lname', email='$email', phone='$phone', street='$street', city='$city', state='$state', postal='$postal' WHERE id=$ownerID";
+    $query = "UPDATE Owner SET FirstName='$fname', LastName='$lname', Email='$email', Phone='$phone', Street='$street', City='$city', State='$state', Postal='$postal' WHERE OwnerID=$ownerID";
 
     // Execute the query
     if (mysqli_query($con, $query)) {
